@@ -43,7 +43,7 @@ public class TelaPrincipal {
             System.out.println("\n------ CADASTRANDO MÉDICO ------\n");
             ControleEspecialidade controle1 = new ControleEspecialidade();
             ArrayList<Especialidade> esps = new ArrayList<>();
-            esps = controle1.lerArquivo("especialidade.txt", "//C:/Users//Diogo Brumassio//Desktop//");
+            esps = controle1.lerArquivo("especialidade.txt", "/tmp/guest-trdwfl/Área de Trabalho/");
             TelaMedico tela = new TelaMedico(esps);
             ControleMedico controle2 = new ControleMedico();
             try {
@@ -93,8 +93,8 @@ public class TelaPrincipal {
             System.out.println("\n------ CADASTRANDO AGENDA------\n");
             ControlePaciente pac = new ControlePaciente();
             ControleMedico med = new ControleMedico();
-            lista = pac.lerArquivo("pacientes.txt","//C:/Users//Diogo Brumassio//Desktop//");
-            lista2 = med.lerArquivo("medico.txt", "//C:/Users//Diogo Brumassio//Desktop//");
+            lista = pac.lerArquivo("pacientes.txt","/tmp/guest-trdwfl/Área de Trabalho/");
+            lista2 = med.lerArquivo("medico.txt", "/tmp/guest-trdwfl/Área de Trabalho/");
             TelaAgenda tela = new TelaAgenda(lista2,lista);
             ControleAgenda controle = new ControleAgenda();
             try {
@@ -106,8 +106,8 @@ public class TelaPrincipal {
             System.out.println("\n------ CADASTRANDO CONSULTA------\n");
             ControleConvenio conv = new ControleConvenio();
             ControleAgenda age = new ControleAgenda();
-            lista3 = conv.lerArquivo("convenio.txt", "//C:/Users//Diogo Brumassio//Desktop//");
-            lista4 = age.lerArquivo("agenda.txt", "//C:/Users//Diogo Brumassio//Desktop//");
+            lista3 = conv.lerArquivo("convenio.txt", "/tmp/guest-trdwfl/Área de Trabalho/");
+            lista4 = age.lerArquivo("agenda.txt", "/tmp/guest-trdwfl/Área de Trabalho/");
             TelaConsulta tela = new TelaConsulta(lista3,lista4);
             ControleConsulta controle = new ControleConsulta();
             try {
@@ -118,7 +118,7 @@ public class TelaPrincipal {
         }else if (r == 9){
             System.out.println("\n------ CADASTRANDO RECEITA MÉDICA------\n");
             ControleConsulta controle1 = new ControleConsulta();
-            lista5 = controle1.lerArquivo("consulta.txt","//C:/Users//Diogo Brumassio//Desktop//");
+            lista5 = controle1.lerArquivo("consulta.txt","/tmp/guest-trdwfl/Área de Trabalho/");
             TelaReceitaMedica tela = new TelaReceitaMedica(lista5);
             ControleReceitaMedica controle = new ControleReceitaMedica();
             try {
