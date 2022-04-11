@@ -39,13 +39,13 @@ public class ControleAgenda {
 
     public void gravarArquivo(TelaAgenda dadoAge) throws FileNotFoundException, IOException {
 
-        abrirArquivo("agenda.txt", "//C:/Users//Diogo Brumassio//Desktop//");
+        abrirArquivo("agenda.txt", "/tmp/guest-trdwfl/Área de Trabalho/");
         fw = new FileWriter(f, true);
         bw = new BufferedWriter(fw);
         agenda = new Agenda(dadoAge.getIdPaciente(), dadoAge.getIdMedico(), dadoAge.getData(), dadoAge.getHorario());
         
         
-        String agendastring = agenda.getIdPaciente()+", "+agenda.getIdMedico()+", "+agenda.getData()+", "+agenda.getHorario();
+        String agendastring = Integer.toString(agenda.getIdPaciente())+", "+Integer.toString(agenda.getIdMedico())+", "+agenda.getData()+", "+agenda.getHorario();
         bw.write(agendastring);
         bw.newLine();
         bw.close();
@@ -60,8 +60,8 @@ public class ControleAgenda {
         br = new BufferedReader(fr);
         ArrayList<Agenda> agends = new ArrayList<>();
         while ((linha = br.readLine()) != null) {
-            String[] dados = linha.split(",");
-            agenda = new Agenda(Integer.parseInt(dados[0]),Integer.parseInt(dados[1]), dados[3], dados[4]);
+            String[] dados = linha.split(", ");
+            agenda = new Agenda(Integer.parseInt(dados[0]),Integer.parseInt(dados[1]), dados[2], dados[3]);
             agends.add(agenda);
         }
 
